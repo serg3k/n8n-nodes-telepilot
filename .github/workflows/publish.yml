@@ -4,11 +4,11 @@
 name: Publish to NPM registry and Dockerhub
 
 on:
-  workflow_dispatch:
-    inputs:
-      npm_registry:
-        description: 'Custom NPM_REGISTRY'
-        required: false
+  # workflow_dispatch:
+  #   inputs:
+  #     npm_registry:
+  #       description: 'Custom NPM_REGISTRY'
+  #       required: false
   push:
     tags:
       - '*.*.*'
