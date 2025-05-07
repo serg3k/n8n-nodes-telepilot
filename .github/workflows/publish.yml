@@ -24,7 +24,8 @@ jobs:
         node-version: [20.15.1]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
     env:
-      NPM_REGISTRY: ${{ github.event.inputs.npm_registry || 'https://registry.npmjs.org' }}
+      # NPM_REGISTRY: ${{ github.event.inputs.npm_registry || 'https://registry.npmjs.org' }}
+      NPM_REGISTRY: 'https://registry.npmjs.org' 
     steps:
     - uses: actions/checkout@v4
     - name: Use Node.js ${{ matrix.node-version }}
@@ -156,7 +157,8 @@ jobs:
     needs: [build, build-and-test-in-docker]
     runs-on: ubuntu-latest
     env:
-      NPM_REGISTRY: ${{ github.event.inputs.npm_registry || 'https://registry.npmjs.org' }}
+      # NPM_REGISTRY: ${{ github.event.inputs.npm_registry || 'https://registry.npmjs.org' }}
+      NPM_REGISTRY: 'https://registry.npmjs.org'
       CUSTOM_REGISTRY_AUTH: ${{ secrets.CUSTOM_REGISTRY_AUTH }}
     steps:
       - uses: actions/checkout@v4
